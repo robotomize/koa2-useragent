@@ -1,7 +1,8 @@
 koa2-useragent
 =====
 
-Fast UserAgent parser based on [express-useragent](https://github.com/biggora/express-useragent)
+Fast UserAgent parser based on [express-useragent](https://github.com/biggora/express-useragent).
+I rewrite the code to es7, but I did use gulp+babel to compile
 
 ## Install 
 
