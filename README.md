@@ -11,7 +11,7 @@ npm install koa2-useragent
 
 ## Usage 
 ```js
- import userAgent from '../koa-useragent/index';
+ import userAgent from 'koa2-useragent';
 
  const app = new Koa();
 
