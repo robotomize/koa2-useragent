@@ -19,11 +19,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robotomize/koa2-useragent.gitt"
+    "url": "https://github.com/robotomize/koa2-useragent.git"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-3": "^6.11.0",
+    "babel-preset-es2015": ">=6.9.0",
+    "babel-preset-stage-3": ">=6.11.0",
     "koa": ">=1.2.0",
     "nodeunit": "^0.9.1",
     "semantic-release": "^4.3.5",
