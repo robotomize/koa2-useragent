@@ -4,6 +4,8 @@ koa2-useragent
 Fast UserAgent parser based on [express-useragent](https://github.com/biggora/express-useragent).
 I rewrite the code to es7, but I did use gulp+babel to compile
 
+[![NPM](https://nodei.co/npm/koa2-useragent.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/koa2-useragent/)
+
 ## Install 
 
 ```js
