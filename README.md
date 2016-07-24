@@ -23,34 +23,7 @@ npm install koa2-useragent
      await next();
  });
 ```
-### Use property filters isDesktop isMobile, as an example
-#### You can aggregate the objects into arrays and filter data for analysis or statistics
 
-
-```js
-let userAgentStorage = [];
-let filtered = [];
-uas.push(ctx.userAgent); // Desktop user agent object
-uas.push(ctx.userAgent); // Mobile user agent object
-
-/**
- *  You will fetch only mobile and Android useragent
- */
-filtered = userAgentStorage.filter((userAgent) => {
-    if (userAgent.isMobile === true && userAgent.isAndroid === true) {
-        return userAgent;
-    }
-});
-
-/**
- * You'll get desktop users on Mac using Chrome
- */
-filtered = userAgentStorage.filter((userAgent) => {
-    if (userAgent.isDesktop === true && userAgent.isMac === true && userAgent.isChrome) {
-        return userAgent;
-    }
-});
-```
 ### The module will display similar information
 
 ```js
@@ -100,6 +73,36 @@ filtered = userAgentStorage.filter((userAgent) => {
   geoIp: {},
   source: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36' }
 ```
+
+### Use property filters isDesktop isMobile, as an example
+
+#### You can aggregate the objects into arrays and filter data for analysis or statistics
+
+```js
+let userAgentStorage = [];
+let filtered = [];
+uas.push(ctx.userAgent); // Desktop user agent object
+uas.push(ctx.userAgent); // Mobile user agent object
+
+/**
+ *  You will fetch only mobile and Android useragent
+ */
+filtered = userAgentStorage.filter((userAgent) => {
+    if (userAgent.isMobile === true && userAgent.isAndroid === true) {
+        return userAgent;
+    }
+});
+
+/**
+ * You'll get desktop users on Mac using Chrome
+ */
+filtered = userAgentStorage.filter((userAgent) => {
+    if (userAgent.isDesktop === true && userAgent.isMac === true && userAgent.isChrome) {
+        return userAgent;
+    }
+});
+```
+
 ## Author
 
 Ivanov Nikita  (robotomize@gmail.com).
