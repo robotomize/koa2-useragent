@@ -1,15 +1,14 @@
 koa2-useragent
 =====
+Fast UserAgent parser based on [express-useragent](https://github.com/biggora/express-useragent)  
 [![Latest Stable Version](https://img.shields.io/npm/v/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 [![License](https://img.shields.io/npm/l/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 [![NPM Downloads](https://img.shields.io/npm/dt/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 [![NPM Downloads](https://img.shields.io/npm/dm/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 
-Fast UserAgent parser based on [express-useragent](https://github.com/biggora/express-useragent).
-
 [![NPM](https://nodei.co/npm/koa2-useragent.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/koa2-useragent/)  
 
-## I rewrite the code to es7, but I did use gulp+babel to compile
+### I rewrite the code to es7, but I did use gulp+babel to compile
 
 ## Install 
 
