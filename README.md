@@ -74,9 +74,7 @@ npm install koa2-useragent
   source: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36' }
 ```
 
-### Use property filters isDesktop isMobile, as an example
-
-#### You can aggregate the objects into arrays and filter data for analysis or statistics
+### You can easily filter the objects to the desired criteria
 
 ```js
 let userAgentStorage = [];
