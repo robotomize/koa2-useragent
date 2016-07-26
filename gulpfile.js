@@ -9,7 +9,7 @@ gulp.task("default", () => {
             plugins: ["transform-runtime"]
         }))
         .pipe(gulp.dest("dist/"));
-    gulp.src("./lib/UserAgent.js")
+    gulp.src("./lib/*.js")
         .pipe(babel({
             plugins: ["transform-runtime"]
         }))

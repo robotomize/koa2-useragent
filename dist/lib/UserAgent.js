@@ -16,34 +16,25 @@ var _createClass2 = require('babel-runtime/helpers/createClass');
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
+var _Versions = require('./Versions');
+
+var _Versions2 = _interopRequireDefault(_Versions);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BOTS = ['\\+https:\\/\\/developers.google.com\\/\\+\\/web\\/snippet\\/', 'googlebot', 'baiduspider', 'gurujibot', 'yandexbot', 'slurp', 'msnbot', 'bingbot', 'facebookexternalhit', 'linkedinbot', 'twitterbot', 'slackbot', 'telegrambot', 'applebot', 'pingdom', 'tumblr '];
 
 var IS_BOT_REGEXP = new RegExp('^.*(' + BOTS.join('|') + ').*$');
 
+/**
+ *
+ */
+
 var UserAgent = function () {
     function UserAgent() {
         (0, _classCallCheck3.default)(this, UserAgent);
 
-        this.version = '0.2.4';
-        this._Versions = {
-            Edge: /Edge\/([\d\w\.\-]+)/i,
-            Firefox: /firefox\/([\d\w\.\-]+)/i,
-            IE: /msie\s([\d\.]+[\d])|trident\/\d+\.\d+;.*[rv:]+(\d+\.\d)/i,
-            Chrome: /chrome\/([\d\w\.\-]+)/i,
-            Chromium: /(?:chromium|crios)\/([\d\w\.\-]+)/i,
-            Safari: /version\/([\d\w\.\-]+)/i,
-            Opera: /version\/([\d\w\.\-]+)|OPR\/([\d\w\.\-]+)/i,
-            Ps3: /([\d\w\.\-]+)\)\s*$/i,
-            Psp: /([\d\w\.\-]+)\)?\s*$/i,
-            Amaya: /amaya\/([\d\w\.\-]+)/i,
-            SeaMonkey: /seamonkey\/([\d\w\.\-]+)/i,
-            OmniWeb: /omniweb\/v([\d\w\.\-]+)/i,
-            Flock: /flock\/([\d\w\.\-]+)/i,
-            Epiphany: /epiphany\/([\d\w\.\-]+)/i,
-            WinJs: /msapphost\/([\d\w\.\-]+)/i
-        };
+        this._Versions = new _Versions2.default();
         this._Browsers = {
             Edge: /edge/i,
             Amaya: /amaya/i,
@@ -163,6 +154,13 @@ var UserAgent = function () {
         this.Agent = {};
     }
 
+    /**
+     *
+     * @param string
+     * @returns {*}
+     */
+
+
     (0, _createClass3.default)(UserAgent, [{
         key: 'getBrowser',
         value: function getBrowser(string) {
@@ -217,6 +215,13 @@ var UserAgent = function () {
                     return 'unknown';
             }
         }
+
+        /**
+         *
+         * @param string
+         * @returns {string}
+         */
+
     }, {
         key: 'getBrowserVersion',
         value: function getBrowserVersion(string) {
@@ -304,6 +309,13 @@ var UserAgent = function () {
                     }
             }
         }
+
+        /**
+         *
+         * @param string
+         * @returns {*}
+         */
+
     }, {
         key: 'getOS',
         value: function getOS(string) {
@@ -405,6 +417,13 @@ var UserAgent = function () {
                     return 'unknown';
             }
         }
+
+        /**
+         *
+         * @param string
+         * @returns {*}
+         */
+
     }, {
         key: 'getPlatform',
         value: function getPlatform(string) {
@@ -446,6 +465,11 @@ var UserAgent = function () {
                     return 'unknown';
             }
         }
+
+        /**
+         *
+         */
+
     }, {
         key: 'testCompatibilityMode',
         value: function testCompatibilityMode() {
@@ -471,6 +495,12 @@ var UserAgent = function () {
                 }
             }
         }
+
+        /**
+         *
+         * @returns {*}
+         */
+
     }, {
         key: 'testSilk',
         value: function testSilk() {
@@ -487,6 +517,12 @@ var UserAgent = function () {
             }
             return this.Agent.isSilk ? 'Silk' : false;
         }
+
+        /**
+         *
+         * @returns {*}
+         */
+
     }, {
         key: 'testKindleFire',
         value: function testKindleFire() {
@@ -523,6 +559,12 @@ var UserAgent = function () {
                     return false;
             }
         }
+
+        /**
+         *
+         * @returns {*}
+         */
+
     }, {
         key: 'testCaptiveNetwork',
         value: function testCaptiveNetwork() {
@@ -537,6 +579,12 @@ var UserAgent = function () {
                     return false;
             }
         }
+
+        /**
+         *
+         * @returns {UserAgent}
+         */
+
     }, {
         key: 'reset',
         value: function reset() {
@@ -546,6 +594,11 @@ var UserAgent = function () {
             }
             return ua;
         }
+
+        /**
+         *
+         */
+
     }, {
         key: 'testMobile',
         value: function testMobile() {
@@ -582,6 +635,11 @@ var UserAgent = function () {
                 ua.Agent.isDesktop = false;
             }
         }
+
+        /**
+         *
+         */
+
     }, {
         key: 'testTablet',
         value: function testTablet() {
@@ -597,6 +655,12 @@ var UserAgent = function () {
                 ua.Agent.isTablet = true;
             }
         }
+
+        /**
+         *
+         * @param headers
+         */
+
     }, {
         key: 'testNginxGeoIP',
         value: function testNginxGeoIP(headers) {
@@ -633,6 +697,12 @@ var UserAgent = function () {
                 ua.Agent.isAndroidTablet = true;
             }
         }
+
+        /**
+         *
+         * @returns {{}|*}
+         */
+
     }], [{
         key: 'parse',
         value: function parse() {
