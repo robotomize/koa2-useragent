@@ -20,6 +20,18 @@ var _Versions = require('./Versions');
 
 var _Versions2 = _interopRequireDefault(_Versions);
 
+var _Browsers = require('./Browsers');
+
+var _Browsers2 = _interopRequireDefault(_Browsers);
+
+var _Os = require('./Os');
+
+var _Os2 = _interopRequireDefault(_Os);
+
+var _Platform = require('./Platform');
+
+var _Platform2 = _interopRequireDefault(_Platform);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BOTS = ['\\+https:\\/\\/developers.google.com\\/\\+\\/web\\/snippet\\/', 'googlebot', 'baiduspider', 'gurujibot', 'yandexbot', 'slurp', 'msnbot', 'bingbot', 'facebookexternalhit', 'linkedinbot', 'twitterbot', 'slackbot', 'telegrambot', 'applebot', 'pingdom', 'tumblr '];
@@ -35,74 +47,9 @@ var UserAgent = function () {
         (0, _classCallCheck3.default)(this, UserAgent);
 
         this._Versions = new _Versions2.default();
-        this._Browsers = {
-            Edge: /edge/i,
-            Amaya: /amaya/i,
-            Konqueror: /konqueror/i,
-            Epiphany: /epiphany/i,
-            SeaMonkey: /seamonkey/i,
-            Flock: /flock/i,
-            OmniWeb: /omniweb/i,
-            Chromium: /chromium|crios/i,
-            Chrome: /chrome/i,
-            Safari: /safari/i,
-            IE: /msie|trident/i,
-            Opera: /opera|OPR/i,
-            PS3: /playstation 3/i,
-            PSP: /playstation portable/i,
-            Firefox: /firefox/i,
-            WinJs: /msapphost/i
-        };
-        this._OS = {
-            Windows10: /windows nt 10\.0/i,
-            Windows81: /windows nt 6\.3/i,
-            Windows8: /windows nt 6\.2/i,
-            Windows7: /windows nt 6\.1/i,
-            UnknownWindows: /windows nt 6\.\d+/i,
-            WindowsVista: /windows nt 6\.0/i,
-            Windows2003: /windows nt 5\.2/i,
-            WindowsXP: /windows nt 5\.1/i,
-            Windows2000: /windows nt 5\.0/i,
-            WindowsPhone8: /windows phone 8\./,
-            OSXCheetah: /os x 10[._]0/i,
-            OSXPuma: /os x 10[._]1(\D|$)/i,
-            OSXJaguar: /os x 10[._]2/i,
-            OSXPanther: /os x 10[._]3/i,
-            OSXTiger: /os x 10[._]4/i,
-            OSXLeopard: /os x 10[._]5/i,
-            OSXSnowLeopard: /os x 10[._]6/i,
-            OSXLion: /os x 10[._]7/i,
-            OSXMountainLion: /os x 10[._]8/i,
-            OSXMavericks: /os x 10[._]9/i,
-            OSXYosemite: /os x 10[._]10/i,
-            OSXElCapitan: /os x 10[._]11/i,
-            Mac: /os x/i,
-            Linux: /linux/i,
-            Linux64: /linux x86\_64/i,
-            ChromeOS: /cros/i,
-            Wii: /wii/i,
-            PS3: /playstation 3/i,
-            PSP: /playstation portable/i,
-            iPad: /\(iPad.*os (\d+)[._](\d+)/i,
-            iPhone: /\(iPhone.*os (\d+)[._](\d+)/i,
-            Bada: /Bada\/(\d+)\.(\d+)/i,
-            Curl: /curl\/(\d+)\.(\d+)\.(\d+)/i
-        };
-        this._Platform = {
-            Windows: /windows nt/i,
-            WindowsPhone: /windows phone/i,
-            Mac: /macintosh/i,
-            Linux: /linux/i,
-            Wii: /wii/i,
-            Playstation: /playstation/i,
-            iPad: /ipad/i,
-            iPod: /ipod/i,
-            iPhone: /iphone/i,
-            Android: /android/i,
-            Blackberry: /blackberry/i,
-            Samsung: /samsung/i,
-            Curl: /curl/i
-        };
+        this._Browsers = new _Browsers2.default();
+        this._OS = new _Os2.default();
+        this._Platform = new _Platform2.default();
 
         this.DefaultAgent = {
             isMobile: false,
