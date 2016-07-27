@@ -1,4 +1,4 @@
-import userAgent from './lib/UserAgent';
+import userAgent from './lib/useragent';
 
 export default () => {
     return async (ctx, next) => {

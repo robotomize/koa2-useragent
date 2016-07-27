@@ -12,9 +12,9 @@ var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _UserAgent = require('./lib/UserAgent');
+var _useragent = require('./lib/useragent');
 
-var _UserAgent2 = _interopRequireDefault(_UserAgent);
+var _useragent2 = _interopRequireDefault(_useragent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27,7 +27,7 @@ exports.default = function () {
                     switch (_context2.prev = _context2.next) {
                         case 0:
                             source = ctx.req.headers['user-agent'] || '';
-                            ua = new _UserAgent2.default();
+                            ua = new _useragent2.default();
 
 
                             ua.reset();
