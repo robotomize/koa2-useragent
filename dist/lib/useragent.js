@@ -32,6 +32,10 @@ var _platform = require('./platform');
 
 var _platform2 = _interopRequireDefault(_platform);
 
+var _engine = require('./engine');
+
+var _engine2 = _interopRequireDefault(_engine);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BOTS = ['\\+https:\\/\\/developers.google.com\\/\\+\\/web\\/snippet\\/', 'googlebot', 'baiduspider', 'gurujibot', 'yandexbot', 'slurp', 'msnbot', 'bingbot', 'facebookexternalhit', 'linkedinbot', 'twitterbot', 'slackbot', 'telegrambot', 'applebot', 'pingdom', 'tumblr '];
@@ -50,6 +54,7 @@ var UserAgent = function () {
         this._Browsers = new _browsers2.default();
         this._OS = new _os2.default();
         this._Platform = new _platform2.default();
+        this._Engine = new _engine2.default();
 
         this.DefaultAgent = {
             isMobile: false,
@@ -399,6 +404,63 @@ var UserAgent = function () {
          */
 
     }, {
+        key: 'getEngine',
+        value: function getEngine(string) {
+            switch (true) {
+                case this._Engine.Edge.test(string):
+                    this.Agent.isEdge = true;
+                    return 'Edge';
+                case this._Engine.Presto.test(string):
+                    this.Agent.isPresto = true;
+                    return 'Presto';
+                case this._Engine.Gecko.test(string):
+                    this.Agent.isGecko = true;
+                    return 'Gecko';
+                case this._Engine.Tasman.test(string):
+                    this.Agent.isTasman = true;
+                    return 'Tasman';
+                case this._Engine.Khtml.test(string):
+                    this.Agent.isKhtml = true;
+                    return 'Khtml';
+                case this._Engine.Links.test(string):
+                    this.Agent.isLinks = true;
+                    return 'Links';
+                case this._Engine.Webkit.test(string):
+                    this.Agent.isWebkit = true;
+                    return 'Webkit';
+                case this._Engine.Trident.test(string):
+                    this.Agent.isTrident = true;
+                    return 'Trident';
+                case this._Engine.Netfront.test(string):
+                    this.Agent.isNetfront = true;
+                    return 'Netfront';
+                case this._Engine.Netsurf.test(string):
+                    this.Agent.isNetsurf = true;
+                    return 'Netsurf';
+                case this._Engine.Amaya.test(string):
+                    this.Agent.isAmaya = true;
+                    return 'Amaya';
+                case this._Engine.Lynx.test(string):
+                    this.Agent.isLynx = true;
+                    return 'Lynx';
+                case this._Engine.W3m.test(string):
+                    this.Agent.isW3m = true;
+                    return 'W3m';
+                case this._Engine.Icab.test(string):
+                    this.Agent.isIcab = true;
+                    return 'Icab';
+                default:
+                    return 'Unknow';
+            }
+        }
+
+        /**
+         *
+         * @param string
+         * @returns {*}
+         */
+
+    }, {
         key: 'getPlatform',
         value: function getPlatform(string) {
             switch (true) {
@@ -686,6 +748,7 @@ var UserAgent = function () {
             ua.Agent.platform = ua.getPlatform(ua.Agent.source);
             ua.Agent.browser = ua.getBrowser(ua.Agent.source);
             ua.Agent.version = ua.getBrowserVersion(ua.Agent.source);
+            ua.Agent.engine = ua.getEngine(ua.Agent.source);
             ua.testBot();
             ua.testSmartTV();
             ua.testMobile();
