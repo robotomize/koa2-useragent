@@ -47,6 +47,7 @@ exports.default = function () {
                                                     ua.Agent.platform = ua.getPlatform(ua.Agent.source);
                                                     ua.Agent.browser = ua.getBrowser(ua.Agent.source);
                                                     ua.Agent.version = ua.getBrowserVersion(ua.Agent.source);
+                                                    ua.Agent.engine = ua.getEngine(ua.Agent.source);
                                                     ua.testNginxGeoIP(ctx.req.headers);
                                                     ua.testBot();
                                                     ua.testMobile();
@@ -56,7 +57,7 @@ exports.default = function () {
                                                     ua.testSilk();
                                                     ua.testKindleFire();
 
-                                                case 13:
+                                                case 14:
                                                 case 'end':
                                                     return _context.stop();
                                             }

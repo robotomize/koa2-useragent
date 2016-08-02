@@ -18,6 +18,7 @@ export default () => {
             ua.Agent.platform = ua.getPlatform(ua.Agent.source);
             ua.Agent.browser = ua.getBrowser(ua.Agent.source);
             ua.Agent.version = ua.getBrowserVersion(ua.Agent.source);
+            ua.Agent.engine = ua.getEngine(ua.Agent.source);
             ua.testNginxGeoIP(ctx.req.headers);
             ua.testBot();
             ua.testMobile();
