@@ -73,6 +73,7 @@ npm install koa2-useragent
   silkAccelerated: false,
   browser: 'Chrome',
   version: '51.0.2704.106',
+  engine: 'Webkit',
   os: 'Linux 64',
   platform: 'Linux',
   geoIp: {},
