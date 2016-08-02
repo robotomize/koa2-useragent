@@ -8,11 +8,14 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
+    "device",
+    "os",
+    "engine",
+    "browser",
     "koa",
     "koa2",
-    "middleware",
-    "useragent",
-    "parse",
+    "user-agent",
+    "parser",
     "request"
   ],
   "author": "Ivanov Nikita <robotomize@gmail.com>",
