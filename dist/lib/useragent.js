@@ -36,6 +36,14 @@ var _engine = require('./engine');
 
 var _engine2 = _interopRequireDefault(_engine);
 
+var _arch = require('./arch.js');
+
+var _arch2 = _interopRequireDefault(_arch);
+
+var _templateObject = require('./template-object');
+
+var _templateObject2 = _interopRequireDefault(_templateObject);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BOTS = ['\\+https:\\/\\/developers.google.com\\/\\+\\/web\\/snippet\\/', 'googlebot', 'baiduspider', 'gurujibot', 'yandexbot', 'slurp', 'msnbot', 'bingbot', 'facebookexternalhit', 'linkedinbot', 'twitterbot', 'slackbot', 'telegrambot', 'applebot', 'pingdom', 'tumblr '];
@@ -55,54 +63,11 @@ var UserAgent = function () {
         this._OS = new _os2.default();
         this._Platform = new _platform2.default();
         this._Engine = new _engine2.default();
+        this._Arch = new _arch2.default();
 
-        this.DefaultAgent = {
-            isMobile: false,
-            isTablet: false,
-            isiPad: false,
-            isiPod: false,
-            isiPhone: false,
-            isAndroid: false,
-            isBlackberry: false,
-            isOpera: false,
-            isIE: false,
-            isEdge: false,
-            isIECompatibilityMode: false,
-            isSafari: false,
-            isFirefox: false,
-            isWebkit: false,
-            isChrome: false,
-            isKonqueror: false,
-            isOmniWeb: false,
-            isSeaMonkey: false,
-            isFlock: false,
-            isAmaya: false,
-            isEpiphany: false,
-            isDesktop: false,
-            isWindows: false,
-            isLinux: false,
-            isLinux64: false,
-            isMac: false,
-            isChromeOS: false,
-            isBada: false,
-            isSamsung: false,
-            isRaspberry: false,
-            isBot: false,
-            isCurl: false,
-            isAndroidTablet: false,
-            isWinJs: false,
-            isKindleFire: false,
-            isSilk: false,
-            isCaptive: false,
-            isSmartTV: false,
-            silkAccelerated: false,
-            browser: 'unknown',
-            version: 'unknown',
-            os: 'unknown',
-            platform: 'unknown',
-            geoIp: {},
-            source: ''
-        };
+        var template = new _templateObject2.default();
+        this.DefaultAgent = template.defaultUserAgent;
+
         this.Agent = {};
     }
 
@@ -403,6 +368,29 @@ var UserAgent = function () {
          * @returns {*}
          */
 
+    }, {
+        key: 'getArch',
+        value: function getArch(string) {
+            switch (true) {
+                case this._Arch.Amd64.test(string):
+                    this.Agent.isAmd64 = true;
+                    return 'Amd64';
+                case this._Arch.Ia32.test(string):
+                    this.Agent.isIa32 = true;
+                    return 'Ia32';
+                case this._Arch.Ia3386.test(string):
+                    this.Agent.isIa3386 = true;
+                    return '386';
+                case this._Arch.powerPc.test(string):
+                    this.Agent.ispowerPc = true;
+                    return 'powerPc';
+                case this._Arch.Arm64mips.test(string):
+                    this.Agent.isArm64mips = true;
+                    return 'Arm64-mps';
+                default:
+                    return 'Unknow';
+            }
+        }
     }, {
         key: 'getEngine',
         value: function getEngine(string) {
