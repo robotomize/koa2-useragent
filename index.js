@@ -2,8 +2,8 @@ import userAgent from './lib/useragent';
 
 export default () => {
     return async (ctx, next) => {
-        var source =  ctx.req.headers['user-agent'] || '';
-        var ua = new userAgent();
+        let source =  ctx.req.headers['user-agent'] || '';
+        let ua = new userAgent();
 
         ua.reset();
 
