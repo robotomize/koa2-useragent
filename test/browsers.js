@@ -2,7 +2,7 @@
  * @author Raivo Laanemets <raivo@infdot.com>
  */
 
-var ua = new require('../dist/lib/UserAgent');
+var ua = new require('../dist/lib/useragent');
 
 exports['iPad 2'] = function(test) {
 

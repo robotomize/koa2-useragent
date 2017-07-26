@@ -36,6 +36,10 @@ var _engine = require('./engine');
 
 var _engine2 = _interopRequireDefault(_engine);
 
+var _arch = require('./arch.js');
+
+var _arch2 = _interopRequireDefault(_arch);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BOTS = ['\\+https:\\/\\/developers.google.com\\/\\+\\/web\\/snippet\\/', 'googlebot', 'baiduspider', 'gurujibot', 'yandexbot', 'slurp', 'msnbot', 'bingbot', 'facebookexternalhit', 'linkedinbot', 'twitterbot', 'slackbot', 'telegrambot', 'applebot', 'pingdom', 'tumblr '];
@@ -55,7 +59,7 @@ var UserAgent = function () {
         this._OS = new _os2.default();
         this._Platform = new _platform2.default();
         this._Engine = new _engine2.default();
-
+        this._Arch = new _arch2.default();
         this.DefaultAgent = {
             isMobile: false,
             isTablet: false,
@@ -98,6 +102,8 @@ var UserAgent = function () {
             silkAccelerated: false,
             browser: 'unknown',
             version: 'unknown',
+            engine: 'unknow',
+            arch: 'unknow',
             os: 'unknown',
             platform: 'unknown',
             geoIp: {},
@@ -255,7 +261,7 @@ var UserAgent = function () {
                     }
                     break;
                 default:
-                    regex = "/#{name}[\/ ]([\d\w\.\-]+)/i";
+                    regex = /#{name}[\/ ]([\d\w\.\-]+)/i;
                     if (regex.test(string)) {
                         return RegExp.$1;
                     }
@@ -403,6 +409,29 @@ var UserAgent = function () {
          * @returns {*}
          */
 
+    }, {
+        key: 'getArch',
+        value: function getArch(string) {
+            switch (true) {
+                case this._Arch.Amd64.test(string):
+                    this.Agent.isAmd64 = true;
+                    return 'Amd64';
+                case this._Arch.Ia32.test(string):
+                    this.Agent.isIa32 = true;
+                    return 'Ia32';
+                case this._Arch.Ia3386.test(string):
+                    this.Agent.isIa3386 = true;
+                    return '386';
+                case this._Arch.powerPc.test(string):
+                    this.Agent.ispowerPc = true;
+                    return 'powerPc';
+                case this._Arch.Arm64mips.test(string):
+                    this.Agent.isArm64mips = true;
+                    return 'Arm64-mps';
+                default:
+                    return 'Unknow';
+            }
+        }
     }, {
         key: 'getEngine',
         value: function getEngine(string) {

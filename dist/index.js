@@ -38,6 +38,8 @@ exports.default = function () {
 
                             pullToAgent = function () {
                                 var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+                                    "use strict";
+
                                     return _regenerator2.default.wrap(function _callee$(_context) {
                                         while (1) {
                                             switch (_context.prev = _context.next) {
@@ -48,6 +50,7 @@ exports.default = function () {
                                                     ua.Agent.browser = ua.getBrowser(ua.Agent.source);
                                                     ua.Agent.version = ua.getBrowserVersion(ua.Agent.source);
                                                     ua.Agent.engine = ua.getEngine(ua.Agent.source);
+                                                    ua.Agent.arch = ua.getArch(ua.Agent.source);
                                                     ua.testNginxGeoIP(ctx.req.headers);
                                                     ua.testBot();
                                                     ua.testMobile();
@@ -57,7 +60,7 @@ exports.default = function () {
                                                     ua.testSilk();
                                                     ua.testKindleFire();
 
-                                                case 14:
+                                                case 15:
                                                 case 'end':
                                                     return _context.stop();
                                             }
