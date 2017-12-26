@@ -77,6 +77,7 @@ npm install koa2-useragent
     isSilk: false,
     isCaptive: false,
     isSmartTV: false,
+    isWechat: false,
     silkAccelerated: false,
 }
 ```
