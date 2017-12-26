@@ -26,6 +26,7 @@ var Platform = function Platform() {
     this.Blackberry = /blackberry/i;
     this.Samsung = /samsung/i;
     this.Curl = /curl/i;
+    this.Wechat = /micromessenger/i;
 };
 
 exports.default = Platform;

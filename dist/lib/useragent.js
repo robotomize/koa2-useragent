@@ -99,6 +99,7 @@ var UserAgent = function () {
             isSilk: false,
             isCaptive: false,
             isSmartTV: false,
+            isWechat: false,
             silkAccelerated: false,
             browser: 'unknown',
             version: 'unknown',
@@ -169,6 +170,9 @@ var UserAgent = function () {
                 case this._Browsers.Firefox.test(string):
                     this.Agent.isFirefox = true;
                     return 'Firefox';
+                case this._Browsers.Wechat.test(string):
+                    this.Agent.isWechat = true;
+                    return 'Wechat';
                 default:
                     return 'unknown';
             }

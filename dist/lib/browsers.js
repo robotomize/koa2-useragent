@@ -29,6 +29,7 @@ var Browsers = function Browsers() {
     this.PSP = /playstation portable/i;
     this.Firefox = /firefox/i;
     this.WinJs = /msapphost/i;
+    this.Wechat = /wechat/i;
 };
 
 exports.default = Browsers;
