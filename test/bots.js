@@ -1,14 +1,9 @@
-/**
- * @author Luiz Freneda <lfreneda@gmail.com>
- */
-
-var ua = new require('../dist/lib/useragent');
+const ua = new require('../dist/lib/useragent');
 
 exports['Baiduspider Bot'] = function(test) {
 
-  var source = 'Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)';
-
-  var userAgent = ua.parse(source);
+  const source = 'Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)',
+      userAgent = ua.parse(source);
 
   test.ok(!userAgent.isMobile, 'Mobile');
   test.ok(!userAgent.isiPad, 'iPad');
@@ -42,11 +37,8 @@ exports['Baiduspider Bot'] = function(test) {
 };
 
 exports['Apple Bot'] = function(test) {
-
-  var source = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1)';
-
-  var userAgent = ua.parse(source);
-
+  const source = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1)',
+      userAgent = ua.parse(source);
   test.ok(!userAgent.isMobile, 'Mobile');
   test.ok(!userAgent.isiPad, 'iPad');
   test.ok(!userAgent.isiPod, 'iPod');
@@ -57,7 +49,7 @@ exports['Apple Bot'] = function(test) {
   test.ok(!userAgent.isIE, 'IE');
   test.ok(userAgent.isSafari, 'Safari');
   test.ok(!userAgent.isFirefox, 'Firefox');
-  test.ok(!userAgent.isWebkit, 'Webkit');
+  test.ok(userAgent.isWebkit, 'Webkit');
   test.ok(!userAgent.isChrome, 'Chrome');
   test.ok(!userAgent.isKonqueror, 'Konqueror');
   test.ok(!userAgent.isOmniWeb, 'OmniWeb');
@@ -80,9 +72,8 @@ exports['Apple Bot'] = function(test) {
 
 exports['Pingdom Bot'] = function(test) {
 
-  var source = 'Pingdom.com_bot_version_1.4_(http://www.pingdom.com/)';
-
-  var userAgent = ua.parse(source);
+  const source = 'Pingdom.com_bot_version_1.4_(http://www.pingdom.com/)',
+      userAgent = ua.parse(source);
 
   test.ok(!userAgent.isMobile, 'Mobile');
   test.ok(!userAgent.isiPad, 'iPad');
@@ -114,4 +105,4 @@ exports['Pingdom Bot'] = function(test) {
 
   test.done();
 
-}
+};

@@ -1,7 +1,7 @@
 koa2-useragent
 =====
 Fast UserAgent parser based on [express-useragent](https://github.com/biggora/express-useragent)  
-### I rewrite the code to es7
+
 [![Latest Stable Version](https://img.shields.io/npm/v/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 [![License](https://img.shields.io/npm/l/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 [![NPM Downloads](https://img.shields.io/npm/dt/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
@@ -17,12 +17,13 @@ npm install koa2-useragent
 
 ## Usage 
 ```js
- import userAgent from 'koa2-useragent';
+ const userAgent = require('koa2-useragent');
 
  app.use(userAgent());
 
  app.use(async (ctx, next) => {
-     console.log(ctx.userAgent);
+    console.log(ctx.userAgent.isWebkit);
+    console.log(ctx.userAgent.isChromeOS);
      await next();
  });
 ```

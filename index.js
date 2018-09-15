@@ -1,6 +1,6 @@
-import userAgent from './lib/useragent';
+const userAgent = require('./lib/useragent');
 
-export default () => {
+module.exports = () => {
     return async (ctx, next) => {
         let source =  ctx.req.headers['user-agent'] || '';
         let ua = new userAgent();
