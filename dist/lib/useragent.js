@@ -502,8 +502,8 @@ class UserAgent {
         let ua = this;
         if (this.Agent.isIE) {
             if (/Trident\/(\d)\.0/i.test(ua.Agent.source)) {
-                var tridentVersion = parseInt(RegExp.$1, 10);
-                var version = parseInt(ua.Agent.version, 10);
+                const tridentVersion = parseInt(RegExp.$1, 10),
+                    version = parseInt(ua.Agent.version, 10);
                 if (version === 7 && tridentVersion === 6) {
                     ua.Agent.isIECompatibilityMode = true;
                     ua.Agent.version = 10.0;
