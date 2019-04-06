@@ -1,6 +1,6 @@
 koa2-useragent
 =====
-Fast User Agent parser
+### Fast User Agent parser middleware
 [![Latest Stable Version](https://img.shields.io/npm/v/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 [![License](https://img.shields.io/npm/l/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 [![NPM Downloads](https://img.shields.io/npm/dt/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
@@ -14,7 +14,7 @@ Fast User Agent parser
 npm install koa2-useragent
 ```
 
-## Usage 
+## Easy usage 
 ```js
  const userAgent = require('koa2-useragent');
 
@@ -112,5 +112,4 @@ filtered = userAgentStorage.filter((userAgent) => {
 ## Author
 
 Ivanov Nikita  (robotomize@gmail.com).
-
 Based on express-useragent by Aleksej Gordejev (aleksej@gordejev.lv). [express-useragent](https://github.com/biggora/express-useragent) 
