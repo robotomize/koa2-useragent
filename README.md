@@ -1,7 +1,6 @@
 koa2-useragent
 =====
-Fast UserAgent parser based on [express-useragent](https://github.com/biggora/express-useragent)  
-
+Fast User Agent parser
 [![Latest Stable Version](https://img.shields.io/npm/v/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 [![License](https://img.shields.io/npm/l/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
 [![NPM Downloads](https://img.shields.io/npm/dt/koa2-useragent.svg?style=flat-square)](https://www.npmjs.com/package/koa2-useragent)
@@ -114,4 +113,4 @@ filtered = userAgentStorage.filter((userAgent) => {
 
 Ivanov Nikita  (robotomize@gmail.com).
 
-Based on express-useragent by Aleksej Gordejev (aleksej@gordejev.lv).
+Based on express-useragent by Aleksej Gordejev (aleksej@gordejev.lv). [express-useragent](https://github.com/biggora/express-useragent) 
