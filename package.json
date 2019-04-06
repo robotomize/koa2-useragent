@@ -1,7 +1,7 @@
 {
   "name": "koa2-useragent",
-  "version": "0.3.1",
-  "description": "Koa2.js middleware for useragent detection",
+  "version": "0.3.2",
+  "description": "Koa2.js middleware for useragent detection. Easy to use and very fast.",
   "main": "dist/index.js",
   "scripts": {
     "test": "node --harmony node_modules/nodeunit/bin/nodeunit test/browsers.js test/bots.js",
@@ -16,7 +16,9 @@
     "koa2",
     "user-agent",
     "parser",
-    "request"
+    "request",
+    "agent",
+    "useragent"
   ],
   "author": "Ivanov Nikita <robotomize@gmail.com>",
   "license": "MIT",
@@ -25,6 +27,7 @@
     "url": "git+https://github.com/robotomize/koa2-useragent.git"
   },
   "devDependencies": {
+    "gulp": "^4.0.0",
     "koa": "^2.3.0",
     "nodeunit": "^0.9.5",
     "semantic-release": "^4.3.5",
